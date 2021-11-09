@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserMapper {
 
-    String sql = "SELECT a.id,a.name \n" +
+    String sql1 = "SELECT a.id,a.name \n" +
             "FROM  USER a \n" +
             "LEFT JOIN td_order b ON b.user_id = a.id\n" +
             "WHERE a.age >= 1\n" +
@@ -20,8 +20,8 @@ public interface UserMapper {
             "HAVING a.id <> 100\n" +
             "LIMIT 0, 10";
 
-    //@Select(value = "select id,name,age from user where id = #{id}")
-    @Select(value = sql)
+    String sql2 = "select id,name,age from user where id = #{id}";
+    @Select(value = sql2)
     User selectUser(Long id);
 
 }
