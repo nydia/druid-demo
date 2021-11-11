@@ -21,7 +21,7 @@ public interface UserMapper {
             "LIMIT 0, 10";
 
     String sql2 = "select id,name,age from user where id = #{id}";
-    @Select(value = sql2)
+    @Select(value = sql1)
     User selectUser(Long id);
 
 }
