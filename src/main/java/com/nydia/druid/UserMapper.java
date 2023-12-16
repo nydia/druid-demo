@@ -22,7 +22,7 @@ public interface UserMapper {
 
     String sql2 = "select id,name,age from t_user where id = #{id}";
 
-    @Select(value = sql1)
+    @Select(value = sql2)
     User selectUser(Long id);
 
 }
